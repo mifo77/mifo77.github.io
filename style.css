@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark-blue: #0A192F;
+    --bg-surface: #112240;
+    --text-primary: #FFFFFF;
+    --text-muted: #8892B0;
+    --accent-blue: #64FFDA;
+    --border-color: #233554;
+    --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-dark-blue);
+    color: var(--text-muted);
+    line-height: 1.6;
+    padding: 0;
+}
+
+.portfolio-header {
+    background-color: var(--bg-surface);
+    padding: 3rem 2rem;
+    /* text-align: center; */
+    border-bottom: 2px solid var(--border-color);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.candidate-name {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.candidate-title {
+    color: var(--accent-blue);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.candidate-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 3px solid var(--border-color);
+}
+
+.contact-info ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-info a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+    color: var(--accent-blue);
+}
+
+/* ==========================================================================
+   LAYOUT CONTAINERS & INDEPENDENT SECTIONS
+   ========================================================================== */
+.portfolio-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+
+.portfolio-section {
+    background-color: var(--bg-surface);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.section-title {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    position: relative;
+}
+
+/* Subtle accent line under titles */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-blue);
+}
+
+/* ==========================================================================
+   SECTION SPECIFIC STYLES
+   ========================================================================== */
+
+/* Profile */
+#profile p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* Education & Awards Common Styles */
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.degree-title, .award-title {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.item-date {
+    color: var(--accent-blue);
+    font-family: monospace;
+    font-size: 0.95rem;
+}
+
+.institution-name, .award-subtitle {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.degree-honors {
+    color: var(--accent-blue);
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.award-item {
+    margin-bottom: 2rem;
+}
+
+.award-item:last-child {
+    margin-bottom: 0;
+}
+
+.award-description {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.skills-category {
+    background-color: var(--bg-dark-blue);
+    padding: 1.25rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.category-title {
+    color: var(--accent-blue);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skills-list {
+    list-style: none;
+}
+
+.skills-list li {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+/* Custom bullet code characters */
+.skills-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-blue);
+}
+
+/* Languages layout */
+.languages-list {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.language-item {
+    flex: 1;
+    min-width: 120px;
+}
+
+.language-name {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.language-proficiency {
+    color: var(--accent-blue);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.portfolio-footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MOBILE ADAPTATION)
+   ========================================================================== */
+@media (max-width: 600px) {
+    .portfolio-header {
+        padding: 2rem 1rem;
+    }
+
+    .header-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .header-text {
+        text-align: center;
+    }
+    
+    .candidate-name {
+        font-size: 1.8rem;
+    }
+    
+    .contact-info ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .item-header {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .portfolio-section {
+        padding: 1.25rem;
+    }
+    
+    .languages-list {
+        gap: 1.5rem;
+    }
+}
+
